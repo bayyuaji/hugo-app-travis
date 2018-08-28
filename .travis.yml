@@ -10,6 +10,7 @@ env:
   global:
     - DOCKER_IMAGE_NAME="hugo-app-travis"
     - K8S_DEPLOYMENT_NAME="hugo-app"
+    - DOCKER_HUB_ORG="sepulsa"
 
 before_script:
 - docker pull smesch/hugo
