@@ -23,8 +23,8 @@ script:
 - docker run -v ${TRAVIS_BUILD_DIR}/public:/public smesch/html-proofer htmlproofer /public --external_only --only-4xx
 
 after_script:
-- docker build -t ${DOCKER_HUB_ORG}/${DOCKER_IMAGE_NAME}:green .
-- docker push ${DOCKER_HUB_ORG}/${DOCKER_IMAGE_NAME}:green
+- docker build -t ${DOCKER_HUB_ORG}/${DOCKER_IMAGE_NAME}:blue .
+- docker push ${DOCKER_HUB_ORG}/${DOCKER_IMAGE_NAME}:blue
 #- docker tag ${DOCKER_HUB_ORG}/${DOCKER_IMAGE_NAME}:green ${DOCKER_USERNAME}/${DOCKER_IMAGE_NAME}:latest
 #- docker push ${DOCKER_HUB_ORG}/${DOCKER_IMAGE_NAME}:latest
 - sed -i -e 's|KUBE_CA_CERT|'"${KUBE_CA_CERT}"'|g' kubeconfig
